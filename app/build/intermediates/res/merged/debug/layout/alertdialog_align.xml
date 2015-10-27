@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_gravity="left|top"
+            android:layout_margin="16dp"
+            android:layout_row="0"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3db9e1"
+                    android:gravity="top|left"
+                    android:onClick="setAlign"
+                    android:padding="8dp"
+                    android:text="abc"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#16617a"
+                    android:gravity="top|center_horizontal"
+                    android:onClick="setAlign"
+                    android:padding="8dp"
+                    android:text="abc"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3db9e1"
+                    android:gravity="top|right"
+                    android:onClick="setAlign"
+                    android:padding="8dp"
+                    android:text="abc"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#16617a"
+                    android:gravity="left|center_vertical"
+                    android:onClick="setAlign"
+                    android:padding="8dp"
+                    android:text="abc"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3db9e1"
+                    android:onClick="setAlign"
+                    android:padding="8dp"
+                    android:text="abc"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#16617a"
+                    android:gravity="right|center_vertical"
+                    android:onClick="setAlign"
+                    android:padding="8dp"
+                    android:text="abc"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3db9e1"
+                    android:gravity="bottom|left"
+                    android:onClick="setAlign"
+                    android:padding="8dp"
+                    android:text="abc"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#16617a"
+                    android:gravity="bottom|center_horizontal"
+                    android:onClick="setAlign"
+                    android:padding="8dp"
+                    android:text="abc"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#3db9e1"
+                    android:gravity="bottom|right"
+                    android:onClick="setAlign"
+                    android:padding="8dp"
+                    android:text="abc"
+                    android:textColor="#fff" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/frameLayout1"
+        android:layout_alignRight="@+id/frameLayout1"
+        android:layout_below="@+id/frameLayout1"
+        android:background="#16617a"
+        android:minHeight="48dp"
+        android:text="닫기"
+        android:textColor="#fff" />
+
+</RelativeLayout><!-- From: file:/F:/SquaredText3/app/src/main/res/layout/alertdialog_align.xml -->
