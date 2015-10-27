@@ -54,7 +54,6 @@ import net.shiftstudios.widget.AdvancedTextView;
 import net.shiftstudios.widget.VerticalSeekBar;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -98,7 +97,7 @@ public class MainActivity extends Activity {
     public TextView display;
 
     // File Explorer Values
-    ArrayList<String> str = new ArrayList<String>();
+    ArrayList<String> str = new ArrayList<>();
 
     private Boolean firstLvl = true;
 
@@ -131,7 +130,7 @@ public class MainActivity extends Activity {
                     .getLayoutParams();
             iconLp.topMargin = iconLp.bottomMargin = iconLp.leftMargin = 0;
             icon.setLayoutParams(iconLp);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
 
         }
 
@@ -274,9 +273,7 @@ public class MainActivity extends Activity {
     }
 
     public static boolean isForegroundWhite(int color) {
-        if (Color.alpha(color) < 80)
-            return false;
-        return getBrightness(color) <= 128;
+        return Color.alpha(color) >= 80 && getBrightness(color) <= 128;
     }
 
     public static double getBrightness(int color) {
@@ -352,7 +349,6 @@ public class MainActivity extends Activity {
     }
 
     public void textColorSelect(View v) {
-        // custom dialog
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.alertdialog_foreground);
@@ -573,8 +569,6 @@ public class MainActivity extends Activity {
                 uiMainImageView.setVisibility(View.VISIBLE);
                 uiMainImageView.setImageDrawable(new BitmapDrawable(
                         getResources(), image));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -712,9 +706,7 @@ public class MainActivity extends Activity {
 
             if (!firstLvl) {
                 Item temp[] = new Item[fileList.length + 1];
-                for (int i = 0; i < fileList.length; i++) {
-                    temp[i + 1] = fileList[i];
-                }
+                System.arraycopy(fileList, 0, temp, 1, fileList.length);
                 temp[0] = new Item("Up", R.drawable.directory_up);
                 fileList = temp;
             }
@@ -764,7 +756,7 @@ public class MainActivity extends Activity {
 
     @Override
     protected Dialog onCreateDialog(int id) {
-        Dialog dialog = null;
+        Dialog dialog;
         AlertDialog.Builder builder = new Builder(this);
 
         if (fileList == null) {
@@ -1140,9 +1132,9 @@ public class MainActivity extends Activity {
         packages = pm.getInstalledApplications(0);
         for (ApplicationInfo packageInfo : packages) {
             if (packageInfo.packageName.equals(targetPackage))
-                return !true; // TODO
+                return false; // TODO
         }
-        return !false;
+        return true;
     }
 
     @Override
